@@ -28,8 +28,8 @@
 ### 1. 克隆仓库
 
 ```bash
-git clone <your-repository-url>
-cd dagong-electronic-supports
+git clone https://github.com/jtzqm/sjzjs
+cd sjzjs
 ```
 
 ### 2. 安装依赖
