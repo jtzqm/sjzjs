@@ -9,7 +9,10 @@ interface QRCodeModalProps {
   onClose: () => void;
 }
 
-export default function QRCodeModal({ isOpen = true, onClose }: QRCodeModalProps) {
+export default function QRCodeModal({
+  isOpen = true,
+  onClose,
+}: QRCodeModalProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {

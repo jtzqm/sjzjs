@@ -29,7 +29,7 @@ export default function AccountDetail({
       try {
         const { accountId } = await params;
         const data = getAccountById(accountId);
-        setAccount(data);
+        setAccount(data ?? null);
       } catch (error) {
         console.error('Failed to fetch account:', error);
       }
