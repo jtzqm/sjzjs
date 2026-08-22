@@ -13,7 +13,15 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { getAccountById, RentalAccount } from '@/lib/accounts';
+import { ACCOUNTS } from '@/lib/accounts'; // 导入所有账号数据用于生成路径
 import QRCodeModal from '@/components/rent/QRCodeModal';
+
+// 关键修复：为静态导出配置 generateStaticParams
+export async function generateStaticParams() {
+  return ACCOUNTS.map((account) => ({
+    accountId: account.id,
+  }));
+}
 
 export default function AccountDetail({
   params,
