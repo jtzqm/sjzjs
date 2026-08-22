@@ -29,7 +29,8 @@ export default function AccountDetail({
       try {
         const { accountId } = await params;
         const data = getAccountById(accountId);
-        setAccount(data);
+        // 将 undefined 转换为 null，以匹配 useState<RentalAccount | null> 的类型定义
+        setAccount(data ?? null);
       } catch (error) {
         console.error('Failed to fetch account:', error);
       }
