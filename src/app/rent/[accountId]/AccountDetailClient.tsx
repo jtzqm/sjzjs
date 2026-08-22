@@ -12,50 +12,25 @@ import {
   Calendar,
 } from 'lucide-react';
 import Link from 'next/link';
-import { getAccountById, RentalAccount } from '@/lib/accounts';
+import { RentalAccount } from '@/lib/accounts';
 import QRCodeModal from '@/components/rent/QRCodeModal';
 
 interface AccountDetailClientProps {
-  accountId: string;
+  account: RentalAccount;
 }
 
-export default function AccountDetailClient({ accountId }: AccountDetailClientProps) {
+export default function AccountDetailClient({
+  account,
+}: AccountDetailClientProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [account, setAccount] = useState<RentalAccount | null>(null);
   const [showQRCode, setShowQRCode] = useState(false);
-
-  useEffect(() => {
-    const fetchAccount = async () => {
-      try {
-        const data = getAccountById(accountId);
-        setAccount(data || null);
-      } catch (error) {
-        console.error('Failed to fetch account:', error);
-      }
-    };
-
-    fetchAccount();
-  }, [accountId]);
-
-  if (!account) {
-    return (
-      <div className="flex min-h-screen items-center justify-center px-4 pb-20 pt-24">
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-bold text-white">账号不存在</h1>
-          <Link href="/rent" className="text-primary hover:underline">
-            返回账号列表
-          </Link>
-        </div>
-      </div>
-    );
-  }
 
   const serverColor =
     account.server === 'wechat'
       ? 'bg-blue-500/20 text-blue-400'
       : 'bg-green-500/20 text-green-400';
   const rankColors: Record<string, string> = {
-    铂金: 'bg-yellow-5_00/20 text-yellow-400',
+    铂金: 'bg-yellow-500/20 text-yellow-400',
     钻石: 'bg-purple-500/20 text-purple-400',
     传奇: 'bg-orange-500/20 text-orange-400',
     黑鹰: 'bg-red-500/20 text-red-400',
@@ -76,7 +51,7 @@ export default function AccountDetailClient({ accountId }: AccountDetailClientPr
             href="/rent"
             className="mb-6 inline-flex items-center gap-2 text-text-secondary transition-colors hover:text-primary"
           >
-            <ArrowLeft className="h-4 w- 4" />
+            <ArrowLeft className="h-4 w-4" />
             返回账号列表
           </Link>
         </motion.div>
@@ -121,8 +96,7 @@ export default function AccountDetailClient({ accountId }: AccountDetailClientPr
               </h1>
               <p className="flex items-center gap-2 text-text-muted">
                 <Calendar className="h-4 w-4" />
-                上架时间：{account.publish 
-                }
+                上架时间：{account.publishDate}
               </p>
 
               {/* Price */}
@@ -149,7 +123,7 @@ export default function AccountDetailClient({ accountId }: AccountDetailClientPr
 
                 <div className="glass rounded-xl p-4">
                   <div className="mb-2 flex items-center gap-2">
-                    <User className="h- 4 w-4 text-primary" />
+                    <User className="h-4 w-4 text-primary" />
                     <span className="text-sm text-text-muted">登录方式</span>
                   </div>
                   <p className="font-medium text-white">{account.loginType}</p>
@@ -169,7 +143,7 @@ export default function AccountDetailClient({ accountId }: AccountDetailClientPr
 
                 <div className="glass rounded-xl p-4">
                   <div className="mb-2 flex items-center gap-2">
-                    <Clock className="h-4 w 4 text-primary" />
+                    <Clock className="h-4 w-4 text-primary" />
                     <span className="text-sm text-text-muted">押金</span>
                   </div>
                   <p className="font-medium text-white">
@@ -212,15 +186,12 @@ export default function AccountDetailClient({ accountId }: AccountDetailClientPr
                 立即租赁
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* QR Code Modal */}
-      <QRCodeModal 
-        isOpen={showQRCode} 
-        onClose={() => setShowQRCode(false)} 
-      />
+      <QRCodeModal isOpen={showQRCode} onClose={() => setShowQRCode(false)} />
     </div>
   );
 }
