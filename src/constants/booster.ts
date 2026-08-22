@@ -1,13 +1,24 @@
 // 跑刀代肝栏目数据配置
 
 export interface BoosterProduct {
-// ...existing code...
-  giftTag?: string
+  id: string;
+  name: string;
+  specs: string;
+  price: string;
+  tier: string;
+  imagePrompt: string;
+  isPlaceholder: boolean;
+  giftTag?: string;
 }
 
 export interface BoosterCategory {
-// ...existing code...
-  products: BoosterProduct[]
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  gradientFrom: string;
+  gradientTo: string;
+  products: BoosterProduct[];
 }
 
 export const BOOSTER_GROUPS = [
