@@ -61,9 +61,9 @@ export const ACCOUNTS: RentalAccount[] = [
     knifeSkin: '',
     operatorSkin: '壮志凌云',
     brickSkin: '',
-    price: 364.00,
+    price: 364.0,
     originalPrice: 373,
-    deposit: 110.00,
+    deposit: 110.0,
     images: [],
     gifts: '仓库所有的6套和awm',
     notes: '收藏室不要动，全装包不',
@@ -90,9 +90,9 @@ export const ACCOUNTS: RentalAccount[] = [
     knifeSkin: '火龙翔天',
     operatorSkin: '雷霆战机',
     brickSkin: '黄金麒麟',
-    price: 520.00,
+    price: 520.0,
     originalPrice: 580,
-    deposit: 150.00,
+    deposit: 150.0,
     images: [],
     gifts: '限定皮肤3件+AWM天龙',
     notes: '可小刀，爽快包邮',
@@ -119,9 +119,9 @@ export const ACCOUNTS: RentalAccount[] = [
     knifeSkin: '修罗',
     operatorSkin: '暗影猎手',
     brickSkin: '冰霜巨龙',
-    price: 880.00,
+    price: 880.0,
     originalPrice: 950,
-    deposit: 200.00,
+    deposit: 200.0,
     images: [],
     gifts: '全皮肤+绝版道具',
     notes: '高端账号，支持任何鉴定',
@@ -136,7 +136,7 @@ export function getAllAccounts(): RentalAccount[] {
 
 // 根据 ID 获取账号
 export function getAccountById(id: string): RentalAccount | undefined {
-  return ACCOUNTS.find(a => a.id === id);
+  return ACCOUNTS.find((a) => a.id === id);
 }
 
 // 搜索账号
@@ -144,17 +144,18 @@ export function searchAccounts(keywords: string): RentalAccount[] {
   if (!keywords) return ACCOUNTS;
   const lower = keywords.toLowerCase();
   return ACCOUNTS.filter(
-    a =>
+    (a) =>
       a.location.toLowerCase().includes(lower) ||
       a.rank.toLowerCase().includes(lower) ||
-      a.tags.some(t => t.toLowerCase().includes(lower))
+      a.tags.some((t) => t.toLowerCase().includes(lower)),
   );
 }
 
 // 按快捷筛选获取账号
 export function getAccountsByQuickFilter(filter: string): RentalAccount[] {
   if (filter === 'all') return ACCOUNTS;
-  if (filter === 'special') return ACCOUNTS.filter(a => a.tags.includes('特价'));
-  if (filter === 'instant') return ACCOUNTS.filter(a => !a.needFaceId);
+  if (filter === 'special')
+    return ACCOUNTS.filter((a) => a.tags.includes('特价'));
+  if (filter === 'instant') return ACCOUNTS.filter((a) => !a.needFaceId);
   return ACCOUNTS;
 }

@@ -12,9 +12,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import Link from 'next/link';
-import { getAccountById } from '@/lib/accounts';
-
-// 导入 QRCodeModal 组件
+import { getAccountById, RentalAccount } from '@/lib/accounts';
 import QRCodeModal from '@/components/rent/QRCodeModal';
 
 export default function AccountDetail({
@@ -23,9 +21,8 @@ export default function AccountDetail({
   params: Promise<{ accountId: string }>;
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [account, setAccount] = useState<any>(null);
+  const [account, setAccount] = useState<RentalAccount | null>(null);
   const [showQRCode, setShowQRCode] = useState(false);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAccount = async () => {
@@ -35,8 +32,6 @@ export default function AccountDetail({
         setAccount(data);
       } catch (error) {
         console.error('Failed to fetch account:', error);
-      } finally {
-        setLoading(false);
       }
     };
 
