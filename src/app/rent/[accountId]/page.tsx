@@ -299,7 +299,9 @@ export default function AccountDetail({
       </div>
 
       {/* QR Code Modal */}
-      {showQRCode && <QRCodeModal onClose={() => setShowQRCode(false)} />}
+      {showQRCode && (
+        <QRCodeModal isOpen={showQRCode} onClose={() => setShowQRCode(false)} />
+      )}
     </div>
   );
 }
