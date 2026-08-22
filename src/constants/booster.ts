@@ -27,7 +27,7 @@ export const BOOSTER_GROUPS = [
     name: '跑刀代肝',
     categories: ['baoxian'],
   },
-]
+];
 
 export const BOOSTER_CATEGORIES: BoosterCategory[] = [
   {
@@ -44,7 +44,8 @@ export const BOOSTER_CATEGORIES: BoosterCategory[] = [
         specs: '优先处理 · 快速响应',
         price: '¥45/1000万',
         tier: 'urgent',
-        imagePrompt: 'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
+        imagePrompt:
+          'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
         isPlaceholder: false,
         giftTag: '加急',
       },
@@ -54,7 +55,8 @@ export const BOOSTER_CATEGORIES: BoosterCategory[] = [
         specs: '优先处理 · 快速响应',
         price: '¥50/1000万',
         tier: 'urgent',
-        imagePrompt: 'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
+        imagePrompt:
+          'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
         isPlaceholder: false,
         giftTag: '加急',
       },
@@ -64,7 +66,8 @@ export const BOOSTER_CATEGORIES: BoosterCategory[] = [
         specs: '标准处理 · 性价比高',
         price: '¥40/1000万',
         tier: 'normal',
-        imagePrompt: 'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
+        imagePrompt:
+          'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
         isPlaceholder: false,
       },
       {
@@ -73,12 +76,13 @@ export const BOOSTER_CATEGORIES: BoosterCategory[] = [
         specs: '标准处理 · 性价比高',
         price: '¥45/1000万',
         tier: 'normal',
-        imagePrompt: 'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
+        imagePrompt:
+          'A tactical military operation scene from Delta Force game, soldiers conducting stealth raid mission at night, green night vision tint, tactical gear and equipment, cinematic lighting, 8k detailed game wallpaper, dramatic atmosphere',
         isPlaceholder: false,
       },
     ],
   },
-]
+];
 
 // 赠送活动数据
 export const GIFT_ACTIVITIES = [
@@ -100,7 +104,7 @@ export const GIFT_ACTIVITIES = [
     gift: '5人以上黑哥哥举牌视频',
     icon: '🎊',
   },
-]
+];
 
 // 注意事项规则
 export const BOOSTER_NOTICE = {
@@ -114,4 +118,4 @@ export const BOOSTER_NOTICE = {
     '下单时请提供您的游戏账号、区服、角色名以及所需服务类型',
     '客服微信：dagong_service（工作时间 9:00-24:00）',
   ],
-}
+};
