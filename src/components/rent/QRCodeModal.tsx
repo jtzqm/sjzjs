@@ -5,11 +5,11 @@ import { X, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 
 interface QRCodeModalProps {
-  isOpen: boolean;
+  isOpen?: boolean; // 将其设为可选，防止调用时报错
   onClose: () => void;
 }
 
-export default function QRCodeModal({ isOpen, onClose }: QRCodeModalProps) {
+export default function QRCodeModal({ isOpen = true, onClose }: QRCodeModalProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
