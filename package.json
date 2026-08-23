@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -17,7 +16,6 @@
     "react-dom": "^18.3.0"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.20.2",
     "@types/node": "^20.19.43",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",

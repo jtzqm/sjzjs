@@ -2,6 +2,10 @@ node_modules
 .next
 out
 build
+.open-next
+.wrangler
+wrangler.jsonc
+.dev.vars
 .env
 .env.local
 .env.development.local
