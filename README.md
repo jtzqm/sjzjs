@@ -52,6 +52,10 @@ npm run dev
 npm run build
 ```
 
+## Cloudflare Pages 部署规范
+
+本项目采用 Cloudflare Pages 静态站点部署。Cloudflare Pages 的构建命令为 `npm run build`，构建输出目录为 `out`。后续修改前请先阅读 [Cloudflare Pages 托管技术规范](docs/CLOUDFLARE-PAGES-SPEC.md)，其中记录了静态导出、动态路由、图片和提交前验证要求。
+
 ## 📂 项目结构
 
 ```text
