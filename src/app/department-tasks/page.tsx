@@ -317,13 +317,13 @@ export default function DepartmentTasks() {
           className="mt-12 text-center"
         >
           <p className="mb-4 text-text-secondary">还有其他问题？随时联系客服</p>
-          <a
-            href="mailto:dagong_service"
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-blue-500 px-8 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
           >
             <CheckCircle2 className="h-5 w-5" />
             联系客服
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>

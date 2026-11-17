@@ -143,9 +143,6 @@ export default function Escort() {
                 ))}
               </div>
             </div>
-            ...existing code...
-
-
             {/* Order Button */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
@@ -155,7 +152,7 @@ export default function Escort() {
                 立即下单
               </button>
               <Link
-                href="/login"
+                href="/contact"
                 className="px-8 py-4 glass rounded-xl text-white font-semibold hover:border-primary/50 transition-all text-center"
               >
                 联系客服

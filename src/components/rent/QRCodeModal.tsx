@@ -47,7 +47,7 @@ export default function QRCodeModal({ isOpen, onClose }: QRCodeModalProps) {
             <div className="text-center">
               <div className="mx-auto mb-6 h-32 w-32 rounded-xl bg-white p-2">
                 <img
-                  src="/api/placeholder/200/200"
+                  src="/images/qr-placeholder.svg"
                   alt="客服二维码"
                   className="h-full w-full object-contain"
                 />

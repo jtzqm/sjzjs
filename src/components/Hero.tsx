@@ -33,10 +33,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <a href="mailto:dagong_service" className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-xl text-white font-semibold hover:opacity-90 transition-all glow">
+            <Link href="/contact" className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-xl text-white font-semibold hover:opacity-90 transition-all glow">
               加客服微信
               <span>›</span>
-            </a>
+            </Link>
           </div>
 
           {/* Stats */}

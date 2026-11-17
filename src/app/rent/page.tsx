@@ -11,21 +11,21 @@ const CUSTOMER_SERVICES = [
   {
     id: 1,
     name: '客服 1',
-    qrCode: '/api/placeholder/200/200', // 占位图，稍后替换
+    qrCode: '/images/qr-placeholder.svg', // 替换为真实客服二维码
     status: 'online',
     wechat: 'service_1'
   },
   {
     id: 2,
     name: '客服 2',
-    qrCode: '/api/placeholder/200/200', // 占位图，稍后替换
+    qrCode: '/images/qr-placeholder.svg', // 替换为真实客服二维码
     status: 'online',
     wechat: 'service_2'
   },
   {
     id: 3,
     name: '客服 3',
-    qrCode: '/api/placeholder/200/200', // 占位图，稍后替换
+    qrCode: '/images/qr-placeholder.svg', // 替换为真实客服二维码
     status: 'offline',
     wechat: 'service_3'
   }

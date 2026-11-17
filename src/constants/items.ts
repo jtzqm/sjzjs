@@ -81,7 +81,7 @@ export const ITEM_PRODUCTS: ItemProduct[] = [
     price: 0,
     category: 'ammo',
     tags: ['热门'],
-    images: ['/api/placeholder/400/300'],
+    images: ['/images/product-placeholder.svg'],
     rules: [
       '请提供准确的账号信息和游戏区服',
       '武器装备需符合游戏安全规范',
@@ -102,7 +102,7 @@ export const ITEM_PRODUCTS: ItemProduct[] = [
     price: 0,
     category: 'loot',
     tags: ['稀有'],
-    images: ['/api/placeholder/400/300'],
+    images: ['/images/product-placeholder.svg'],
     rules: [
       '搜集品类型需在备注中注明',
       '部分稀有物品可能需要定制服务',
@@ -123,7 +123,7 @@ export const ITEM_PRODUCTS: ItemProduct[] = [
     price: 0,
     category: 'haffcoin',
     tags: ['热销'],
-    images: ['/api/placeholder/400/300'],
+    images: ['/images/product-placeholder.svg'],
     rules: [
       '请提供准确的账号信息',
       '哈夫币数量需在备注中注明',
@@ -144,7 +144,7 @@ export const ITEM_PRODUCTS: ItemProduct[] = [
     price: 0,
     category: 'event',
     tags: ['限时'],
-    images: ['/api/placeholder/400/300'],
+    images: ['/images/product-placeholder.svg'],
     rules: [
       '活动限定物品需在活动期间内下单',
       '部分物品可能需要额外条件解锁',
@@ -165,7 +165,7 @@ export const ITEM_PRODUCTS: ItemProduct[] = [
     price: 0,
     category: 'upgrade',
     tags: ['专业'],
-    images: ['/api/placeholder/400/300'],
+    images: ['/images/product-placeholder.svg'],
     rules: [
       '请提供准确的账号信息和当前等级',
       '升级目标需在备注中注明',
