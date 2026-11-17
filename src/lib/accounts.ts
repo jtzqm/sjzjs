@@ -1,42 +1,9 @@
 // 账号租赁 - 静态示例数据（纯前端展示）
+import type { RentalAccount } from '@/types/rent'
+import { QUICK_FILTERS } from '@/types/rent'
 
-export interface RentalAccount {
-  id: string;
-  publishDate: string;
-  location: string;
-  server: 'wechat' | 'qq';
-  loginType: string;
-  needFaceId: boolean;
-  rank: string;
-  bounty: string;
-  pureCoin: number;
-  ratio: string;
-  staminaLevel: number;
-  rangeLevel: number;
-  kd: number;
-  helmet6: number;
-  armor6: number;
-  safeBox: string;
-  awmAmmo: number;
-  knifeSkin: string;
-  operatorSkin: string;
-  brickSkin: string;
-  price: number;
-  originalPrice?: number;
-  deposit: number;
-  images: string[];
-  gifts: string;
-  notes: string;
-  tags: string[];
-}
-
-export const QUICK_FILTERS = [
-  { key: 'instant', name: '人在秒上号', color: 'orange' },
-  { key: 'special', name: '特价', color: 'orange' },
-  { key: 'small_amount', name: '小额特价', color: 'orange' },
-  { key: '9_grid', name: '9格特价', color: 'orange' },
-  { key: 'fast_return', name: '快打返现', color: 'orange' },
-];
+export type { RentalAccount } from '@/types/rent'
+export { QUICK_FILTERS } from '@/types/rent'
 
 // 静态账号数据
 export const ACCOUNTS: RentalAccount[] = [

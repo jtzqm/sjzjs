@@ -1,4 +1,5 @@
 // 陪玩护航栏目数据配置
+import { SITE_CONFIG } from '@/config/site'
 
 export interface EscortCategory {
   id: string
@@ -32,7 +33,7 @@ export const ESCORT_CATEGORIES: EscortCategory[] = [
       '请提前准备好游戏所需的所有设备和网络环境',
       '游戏过程中请遵守游戏规则，禁止使用外挂或作弊软件',
       '如有特殊要求（如指定英雄、玩法等），请在备注中说明',
-      '客服微信：dagong_service（工作时间 9:00-24:00）',
+      '客服微信：' + SITE_CONFIG.wechat + '（工作时间 9:00-24:00）',
     ],
     serviceFlow: ['提交需求', '战术沟通', '开始战斗', '结算评价'],
   },
@@ -55,7 +56,7 @@ export const ESCORT_CATEGORIES: EscortCategory[] = [
       '确保账号处于正常状态，无欠费、无封禁记录',
       '护航期间请勿修改密码或绑定信息，以免影响服务',
       '如需调整目标段位或玩法，请提前与护航师沟通',
-      '客服微信：dagong_service（24 小时在线）',
+      '客服微信：' + SITE_CONFIG.wechat + '（24 小时在线）',
     ],
     serviceFlow: ['下单预约', '战术部署', '执行护航', '成功撤离'],
   },
@@ -78,7 +79,7 @@ export const ESCORT_CATEGORIES: EscortCategory[] = [
       '下单时请提供必要的游戏信息和联系方式',
       '参与过程中请保持友好互动，尊重陪玩师和其他玩家',
       '趣味单可能需要多人配合，请确保有时间参与',
-      '客服微信：dagong_service（工作时间 10:00-22:00）',
+      '客服微信：' + SITE_CONFIG.wechat + '（工作时间 10:00-22:00）',
     ],
     serviceFlow: ['选择挑战', '任务确认', '执行挑战', '结算奖励'],
   },
@@ -101,7 +102,7 @@ export const ESCORT_CATEGORIES: EscortCategory[] = [
       '如有参考图片或视频，请一并提供以便更准确理解需求',
       '定制单价格根据复杂度而定，请以客服报价为准',
       '服务过程中请保持沟通，及时反馈想法和调整建议',
-      '客服微信：dagong_service（专属顾问一对一服务）',
+      '客服微信：' + SITE_CONFIG.wechat + '（专属顾问一对一服务）',
     ],
     serviceFlow: ['需求提交', '方案报价', '定金支付', '任务执行', '验收结算'],
   },
@@ -116,5 +117,5 @@ export const GENERAL_NOTICE = `
 3. 发货时间：付款后 1-24 小时内
 4. 如遇特殊情况无法发货，将全额退款
 5. 请提供正确的游戏区服和角色名
-6. 如有问题请联系客服微信：dagong_service
+6. 如有问题请联系客服微信：${SITE_CONFIG.wechat}
 `

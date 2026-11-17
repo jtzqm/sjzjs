@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
+import { SITE_CONFIG, IMAGES } from '@/config/site';
 
 interface QRCodeModalProps {
   isOpen: boolean;
@@ -13,7 +14,7 @@ export default function QRCodeModal({ isOpen, onClose }: QRCodeModalProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('dagong_service');
+    navigator.clipboard.writeText(SITE_CONFIG.wechat);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -47,7 +48,7 @@ export default function QRCodeModal({ isOpen, onClose }: QRCodeModalProps) {
             <div className="text-center">
               <div className="mx-auto mb-6 h-32 w-32 rounded-xl bg-white p-2">
                 <img
-                  src="/images/qr-placeholder.svg"
+                  src={IMAGES.qrPlaceholder}
                   alt="客服二维码"
                   className="h-full w-full object-contain"
                 />
@@ -61,7 +62,7 @@ export default function QRCodeModal({ isOpen, onClose }: QRCodeModalProps) {
                   <div className="flex items-center gap-2">
                     <MessageCircle className="h-5 w-5 text-primary" />
                     <span className="font-mono text-lg text-white">
-                      dagong_service
+                      {SITE_CONFIG.wechat}
                     </span>
                   </div>
                   <button

@@ -5,31 +5,7 @@ import { motion } from 'framer-motion'
 import Banner from '@/components/rent/Banner'
 import { QrCode, MessageCircle, CheckCircle2 } from 'lucide-react'
 import Image from 'next/image'
-
-// 客服数据配置
-const CUSTOMER_SERVICES = [
-  {
-    id: 1,
-    name: '客服 1',
-    qrCode: '/images/qr-placeholder.svg', // 替换为真实客服二维码
-    status: 'online',
-    wechat: 'service_1'
-  },
-  {
-    id: 2,
-    name: '客服 2',
-    qrCode: '/images/qr-placeholder.svg', // 替换为真实客服二维码
-    status: 'online',
-    wechat: 'service_2'
-  },
-  {
-    id: 3,
-    name: '客服 3',
-    qrCode: '/images/qr-placeholder.svg', // 替换为真实客服二维码
-    status: 'offline',
-    wechat: 'service_3'
-  }
-]
+import { CUSTOMER_SERVICES } from '@/config/site'
 
 export default function Rent() {
   return (

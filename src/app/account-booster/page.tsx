@@ -4,107 +4,17 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowLeft,
-  Gift,
+  CheckCircle2,
   Zap,
   Clock,
-  AlertTriangle,
-  CheckCircle2,
-  Shield,
-  Users,
 } from 'lucide-react';
 import Link from 'next/link';
-
-// 赠送活动数据
-const GIFT_PROMOTIONS = [
-  {
-    id: 1,
-    title: '下单赠送5000万',
-    subtitle: '送个人黑人祝福语视频一条',
-    icon: Gift,
-    color: 'from-yellow-500 to-orange-500',
-    bgGlow: 'rgba(234, 179, 8, 0.15)',
-  },
-  {
-    id: 2,
-    title: '下单赠送3亿',
-    subtitle: '送三人黑人举牌视频一条',
-    icon: Users,
-    color: 'from-purple-500 to-pink-500',
-    bgGlow: 'rgba(168, 85, 247, 0.15)',
-  },
-  {
-    id: 3,
-    title: '下单赠送5亿',
-    subtitle: '送5人以上黑人举牌视频一条',
-    icon: Users,
-    color: 'from-red-500 to-rose-500',
-    bgGlow: 'rgba(239, 68, 68, 0.15)',
-  },
-];
-
-// 订单类型定义
-type OrderType = 'urgent' | 'regular';
-
-// 价格数据
-const PRICING_DATA: Record<
-  OrderType,
-  { label: string; icon: React.ElementType; color: string; glowColor: string }[]
-> = {
-  urgent: [
-    {
-      label: '6/9格保险  45/1000万',
-      icon: Zap,
-      color: 'from-yellow-400 to-orange-500',
-      glowColor: 'rgba(234, 179, 8, 0.2)',
-    },
-    {
-      label: '2/4格保险  50/1000万',
-      icon: Zap,
-      color: 'from-yellow-400 to-orange-500',
-      glowColor: 'rgba(234, 179, 8, 0.2)',
-    },
-  ],
-  regular: [
-    {
-      label: '6/9格保险  40/1000万',
-      icon: Clock,
-      color: 'from-blue-400 to-cyan-500',
-      glowColor: 'rgba(59, 130, 246, 0.2)',
-    },
-    {
-      label: '2/4格保险  45/1000万',
-      icon: Clock,
-      color: 'from-blue-400 to-cyan-500',
-      glowColor: 'rgba(59, 130, 246, 0.2)',
-    },
-  ],
-};
-
-// 注意事项数据
-const NOTICES = [
-  {
-    icon: Shield,
-    title: '账号问题说明',
-    content: '黑人跑刀可以解决200T，匹配池黑等等轻度账号问题。',
-  },
-  {
-    icon: AlertTriangle,
-    title: '掉号情况说明',
-    content:
-      '个别账号（高危，刚被追缴，未满级，存在大额撞车记录等）会出现频繁掉号情况，此为正常现象，不必担心，约登录3次左右就不会再出现。',
-  },
-  {
-    icon: Shield,
-    title: '安全设备要求',
-    content:
-      '为了确保您的账号安全，请确定您的腾讯游戏安全中心信任设备只有包含我方设备在内的3个设备。',
-  },
-  {
-    icon: Clock,
-    title: '代肝效率说明',
-    content: '普通代肝每日约为1500万哈夫币，加急代肝每日约为2500万哈夫币。',
-  },
-];
+import {
+  GIFT_PROMOTIONS,
+  PRICING_DATA,
+  BOOSTER_NOTICES,
+  type OrderType,
+} from '@/constants/booster';
 
 export default function AccountBooster() {
   const [activeTab, setActiveTab] = useState<OrderType>('urgent');
@@ -281,7 +191,7 @@ export default function AccountBooster() {
             ⚠️ 注意事项
           </h2>
           <div className="glass space-y-6 rounded-2xl p-8">
-            {NOTICES.map((notice, index) => (
+            {BOOSTER_NOTICES.map((notice, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
