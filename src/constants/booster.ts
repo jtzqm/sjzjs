@@ -18,7 +18,7 @@ export const GIFT_PROMOTIONS: Promotion[] = [
   {
     id: 1,
     title: '下单赠送5000万',
-    subtitle: '送个人黑人祝福语视频一条',
+    subtitle: '送个人专属祝福视频一条',
     icon: Gift,
     color: 'from-yellow-500 to-orange-500',
     bgGlow: 'rgba(234, 179, 8, 0.15)',
@@ -26,7 +26,7 @@ export const GIFT_PROMOTIONS: Promotion[] = [
   {
     id: 2,
     title: '下单赠送3亿',
-    subtitle: '送三人黑人举牌视频一条',
+    subtitle: '送三人举牌祝福视频一条',
     icon: Users,
     color: 'from-purple-500 to-pink-500',
     bgGlow: 'rgba(168, 85, 247, 0.15)',
@@ -34,7 +34,7 @@ export const GIFT_PROMOTIONS: Promotion[] = [
   {
     id: 3,
     title: '下单赠送5亿',
-    subtitle: '送5人以上黑人举牌视频一条',
+    subtitle: '送5人以上举牌祝福视频一条',
     icon: Users,
     color: 'from-red-500 to-rose-500',
     bgGlow: 'rgba(239, 68, 68, 0.15)',
@@ -89,7 +89,7 @@ export const BOOSTER_NOTICES: Notice[] = [
   {
     icon: Shield,
     title: '账号问题说明',
-    content: '黑人跑刀可以解决200T，匹配池黑等等轻度账号问题。',
+    content: '跑刀服务可以解决200T、匹配池异常等轻度账号问题。',
   },
   {
     icon: AlertTriangle,

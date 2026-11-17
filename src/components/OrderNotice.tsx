@@ -1,7 +1,9 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { AlertCircle, CheckCircle2, X } from 'lucide-react'
+import { AlertCircle, CheckCircle2, X, MessageCircle } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { SITE_CONFIG } from '@/config/site'
 
 interface OrderNoticeProps {
   isOpen: boolean
@@ -12,7 +14,27 @@ interface OrderNoticeProps {
 }
 
 export default function OrderNotice({ isOpen, onClose, title = '订单须知', rules, instructions }: OrderNoticeProps) {
-  if (!isOpen) return null
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(SITE_CONFIG.wechat)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  useEffect(() => {
+    if (!isOpen) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', onKeyDown)
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = originalOverflow
+    }
+  }, [isOpen, onClose])
 
   return (
     <AnimatePresence>
@@ -92,6 +114,23 @@ export default function OrderNotice({ isOpen, onClose, title = '订单须知', r
                   </motion.div>
                 ))}
               </div>
+            </div>
+
+            {/* Contact Action */}
+            <div className="mb-4 flex items-center justify-between gap-3 rounded-xl bg-primary/10 p-4">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="h-5 w-5 text-primary" />
+                <div>
+                  <p className="text-xs text-text-muted">下单请添加客服微信</p>
+                  <p className="font-mono text-sm text-white">{SITE_CONFIG.wechat}</p>
+                </div>
+              </div>
+              <button
+                onClick={handleCopy}
+                className="flex-shrink-0 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              >
+                {copied ? '已复制' : '复制微信号'}
+              </button>
             </div>
 
             {/* Confirm Button */}
